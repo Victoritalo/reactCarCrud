@@ -10,7 +10,7 @@ export function CarCard(props: {
       <CardContainer style={{ backgroundColor: props.car.color }}>
         <h2>{props.car.model}</h2>
         <p>{props.car.manufacturer}</p>
-        <p>{props.car.year}</p>
+        <p>{props.car.carYear}</p>
         <Button
           title={"Delete"}
           deleteFunction={() => props.deletar(props.car.id)}

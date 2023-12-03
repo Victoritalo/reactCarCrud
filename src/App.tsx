@@ -22,35 +22,42 @@ export function App() {
   const [cars, setCars] = useState<NewCarProps[]>(carsData);
   const [model, setModel] = useState("");
   const [manufacturer, setManufacturer] = useState("");
-  const [year, setYear] = useState("");
+  const [carYear, setCarYear] = useState("");
   const [color, setColor] = useState("");
 
   const addNewCar = useCallback(() => {
     if (
       model.trim() === "" ||
       manufacturer.trim() === "" ||
-      year.trim() === "" ||
+      carYear.trim() === "" ||
       color.trim() === ""
     )
       return window.alert(
         "Please review your submission as some fields are still empty."
       );
+
+    if (isNaN(Number(carYear)))
+      return window.alert("Please enter a valid number for the year.");
+
+    if (Number(carYear.length) < 4)
+      return window.alert("Year must have 4 digits");
+
     const newCar: NewCarProps = {
       id: uuid(),
       model: model,
       manufacturer: manufacturer,
-      year: Number(year),
+      carYear: Number(carYear),
       color: color,
     };
     setCars([newCar, ...cars]);
     setModel("");
     setManufacturer("");
-    setYear("");
+    setCarYear("");
     setColor("");
-  }, [model, manufacturer, year, color, cars]);
+  }, [model, manufacturer, carYear, color, cars]);
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
     addNewCar();
   };
   function deleteCar(id: string) {
@@ -74,6 +81,7 @@ export function App() {
                 onChange={(e) => setModel(e.target.value)}
                 type="text"
                 placeholder="Car's model"
+                required
               />
               <Label htmlFor="brand">Brand</Label>
               <Input
@@ -82,14 +90,16 @@ export function App() {
                 onChange={(e) => setManufacturer(e.target.value)}
                 type="text"
                 placeholder="Car's Brand"
+                required
               />
               <Label htmlFor="carYear">Year</Label>
               <Input
-                value={year}
+                value={carYear}
                 name="carYear"
-                onChange={(e) => setYear(e.target.value)}
-                type="text"
-                placeholder="Add car's tear"
+                onChange={(e) => setCarYear(e.target.value)}
+                type="number"
+                placeholder="Add car's year"
+                required
               />
               <Label htmlFor="carColor">Color</Label>
               <Input

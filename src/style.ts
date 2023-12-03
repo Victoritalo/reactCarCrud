@@ -83,6 +83,7 @@ export const CarsContainer = styled.div`
   min-height: 420px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 40rem;
+  backdrop-filter: blur(1px);
   @media (max-width: 768px) {
     width: 100%;
   }
