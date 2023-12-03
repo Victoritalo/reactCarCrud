@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { NewCarProps } from "./database/carsdata_bd";
 import { v4 as uuid } from "uuid";
 import { carsData } from "./database/carsdata_bd";
@@ -16,6 +16,7 @@ import {
   CarsContainer,
   InfoDiv,
   ListContainer,
+  InputSearch,
 } from "./style";
 
 export function App() {
@@ -24,6 +25,8 @@ export function App() {
   const [manufacturer, setManufacturer] = useState("");
   const [carYear, setCarYear] = useState("");
   const [color, setColor] = useState("");
+  const [carsFilter, setCarsFilter] = useState<NewCarProps[]>([]);
+  const [search, setSearch] = useState("");
 
   const addNewCar = useCallback(() => {
     if (
@@ -56,10 +59,21 @@ export function App() {
     setColor("");
   }, [model, manufacturer, carYear, color, cars]);
 
+  useEffect(() => {
+    if (search === "") return setCarsFilter(cars);
+
+    const filterCar = cars.filter((car) => {
+      return car.model.toLowerCase().includes(search.toLowerCase());
+    });
+
+    setCarsFilter(filterCar);
+  }, [search, cars]);
+
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     addNewCar();
   };
+
   function deleteCar(id: string) {
     const updatedCars = cars.filter((car) => car.id !== id);
     setCars(updatedCars);
@@ -115,7 +129,13 @@ export function App() {
         </FormContainer>
         <CarsContainer>
           <TitleDiv>
-            <FormTitle>Car List</FormTitle>
+            <FormTitle>Car List - Search</FormTitle>
+            <InputSearch
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              type="text"
+              placeholder="Search by Model"
+            />
           </TitleDiv>
           <ul>
             <InfoDiv>
@@ -126,7 +146,7 @@ export function App() {
             </InfoDiv>
             <ListContainer>
               <li>
-                {cars.map((car) => (
+                {carsFilter.map((car) => (
                   <CarCard key={car.id} car={car} deletar={deleteCar} />
                 ))}
               </li>

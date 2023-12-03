@@ -13,6 +13,9 @@ export const MainContainer = styled.main`
 export const TitleDiv = styled.div`
   width: 100%;
   background-color: #4d4d4d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 export const FormTitle = styled.h2`
@@ -70,6 +73,19 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 100%;
   padding: 10px;
+  font-size: 14px;
+  border: 1px solid;
+  outline: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  &:focus {
+    transition: 0.2s;
+    background-color: #4d4d4d;
+  }
+`;
+export const InputSearch = styled.input`
+  width: 50%;
+  padding: 5px;
   font-size: 14px;
   border: 1px solid;
   outline: none;
