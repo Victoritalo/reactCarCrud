@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 export const MainContainer = styled.main`
-  /* width: 100vw; */
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -13,7 +12,7 @@ export const MainContainer = styled.main`
 `;
 export const TitleDiv = styled.div`
   width: 100%;
-  background-color: #000;
+  background-color: #4d4d4d;
 `;
 
 export const FormTitle = styled.h2`
@@ -24,9 +23,10 @@ export const FormTitle = styled.h2`
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
-  background-color: #242424;
   min-height: 400px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(1px);
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -35,6 +35,9 @@ export const FormBodyStyle = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
+  @media (max-width: 900px) {
+    padding: 5px;
+  }
 `;
 
 export const FormGroup = styled.div`
@@ -79,11 +82,11 @@ export const Input = styled.input`
 `;
 
 export const CarsContainer = styled.div`
-  background-color: #242424;
-  min-height: 420px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(1px);
+  min-height: 422px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 40rem;
-  backdrop-filter: blur(1px);
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -100,6 +103,41 @@ export const InfoDiv = styled.div`
 export const ListContainer = styled.div`
   border-top: solid #0d1117;
   border-width: 1px 0;
-  max-height: 315px;
-  overflow-y: scroll;
+  max-height: 319px;
+  overflow-y: auto;
+
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: #000000 #676767;
+  }
+
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: #676767;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background-color: #676767;
+  }
+
+  &::-webkit-scrollbar-track:active {
+    background-color: #676767;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #3a3a3a;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #000000;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #000000;
+  }
 `;
