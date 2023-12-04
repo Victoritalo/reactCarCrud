@@ -1,6 +1,13 @@
-# Projeto React - README
+<h1 style="text-align: center;">Projeto React - README</h1>
+
+<h2 style="text-align: center;">Versão atual 1.8</h2>
+
+![Screenshot_732](https://github.com/Victoritalo/reactCarCrud/assets/108995269/d18c4a4c-f93a-42f1-ada2-77b05690a55c)
+
+<h2 style="text-align: center;">Versão de deploy 1.0</h2>
 
 ![Screenshot do Projeto](https://github.com/Victoritalo/crudApi_front/assets/108995269/8df66f5b-2050-4bc8-85a3-0d40c9e004c0)
+
 
 ## Descrição do Projeto
 
@@ -14,13 +21,11 @@ Este projeto foi desenvolvido como parte do meu aprendizado contínuo em React, 
 
 - **Remoção de Itens:** A funcionalidade de remoção de itens também foi implementada, oferecendo uma maneira fácil de gerenciar o conteúdo exibido.
 
+- **Busca por Nome:** Agora é possível buscar itens por nome, proporcionando uma forma rápida e eficiente de localizar itens específicos na lista.
+
 ## Funcionalidades Pendentes
 
-Duas funcionalidades importantes ainda estão em desenvolvimento e serão implementadas em breve:
-
-- **Busca por Nome:** A capacidade de buscar itens por nome ainda está em fase de implementação. Isso proporcionará uma forma rápida e eficiente de localizar itens específicos na lista.
-
-- **Edição de Valores:** A funcionalidade de editar valores também está planejada para ser adicionada em breve. Isso permitirá que os usuários realizem alterações nos itens já existentes.
+A funcionalidade de edição de valores ainda está em desenvolvimento e será implementada em breve.
 
 ## Tecnologias Utilizadas
 
@@ -43,3 +48,5 @@ Duas funcionalidades importantes ainda estão em desenvolvimento e serão implem
 
 - **LinkedIn:** [Perfil no LinkedIn](https://www.linkedin.com/in/victoritalo/)
 - **Instagram:** [Perfil no Instagram](https://www.instagram.com/devicttor/)
+# 
+#
