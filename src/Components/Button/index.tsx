@@ -2,8 +2,8 @@ import { StyledBtn } from "./style";
 
 interface ButtonProps {
   title: string;
-  deleteFunction: any;
+  delete: any;
 }
 export function Button(props: ButtonProps) {
-  return <StyledBtn onClick={props.deleteFunction}>{props.title}</StyledBtn>;
+  return <StyledBtn onClick={props.delete}>{props.title}</StyledBtn>;
 }

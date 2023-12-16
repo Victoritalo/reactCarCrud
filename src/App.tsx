@@ -147,7 +147,7 @@ export function App() {
             <ListContainer>
               <li>
                 {carsFilter.map((car) => (
-                  <CarCard key={car.id} car={car} deletar={deleteCar} />
+                  <CarCard key={car.id} car={car} delete={deleteCar} />
                 ))}
               </li>
             </ListContainer>
